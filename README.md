@@ -1,10 +1,10 @@
-#Como colocar a mongo db em seu botJS
+##Como colocar a mongo db em seu botJS
 Requisitos 
 <https://cloud.mongodb.com/> _Conta no mongo_ 
 <https://www.npmjs.com/package/mongoose> _npm i mongoose_
 <https://discordjs.guide/keyv/#command-handler> _Tutorial de bot Handler_
 
-#Criando Conta
+##Criando Conta
 
 Ao entrar no site do MongoDB Atlas vá em "Sign-in" ou em "Try Free" e crie sua conta com os seus dados (Não precisa de cartão, é totalmente gratuito).
 Logo após você criar a conta, o Cluster irá ser criado automáticamente, que é onde fica a sua Database.
@@ -36,7 +36,7 @@ Após escolher uma das alternativas de como iremos usar a conexão através do m
 
 Nisso você criou a Conta, fez o usuário, manteve as conexões abertas e agora pegou o link de conexão. O que falta mais? bom... usarmos isso no código né
 
-#Aplicando o Mongoose no código**
+##Aplicando o Mongoose no código
 
 Bom, lembra do nosso código base do bot usando a npm Discord.js? então, porque não usar ele como exemplo?
 Crie um arquivo chamado "database.js", será onde irá ficar a conexão com a Mongo Atlas e o sistema de troca de documentos!
@@ -108,3 +108,6 @@ grandle.on("message", message => {
 ```
 
 Bom, então é isso. É um pequeno tutorial de como criar, conectar e usar o Mongo Atlas.
+OBS: Caso der erro que seu banco de dados está desligado por erro, coloca no lugar de <password>, a senha q vc deu para vc msm o, admin do acesso da database.
+    ex:
+    mongodb+srv://glorus:kolerlol@Censurei para ngm tentar pegar o link
