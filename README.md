@@ -12,27 +12,27 @@ Logo após você criar a conta, o Cluster irá ser criado automáticamente, que 
 Ok Agora, vamos começar a configurar!
 
 1. Clique em Security, e depois vá a **DataBase Acess**
-!(MongoDB)[https://cdn.discordapp.com/attachments/597994004088619018/599002678638673922/download.png]
+<img height="384" src="https://cdn.discordapp.com/attachments/597994004088619018/599002678638673922/download.png">
 Vá em **+ ADD NEW USER**
 
 OBS: Lembre da senha q vc criou no **+ ADD NEW USER** Para funcionar a database
 
 2- Agora precisamos liberar as conexões.
 Na mesma aba do Security, tem a barrinha onde diz "Network Acess", vá nessa categoria e coloque o endereço de ip Global
-!(MongoDB)[https://cdn.discordapp.com/attachments/597994004088619018/599002677979906081/download_1.png]
+<img height="384" src="https://cdn.discordapp.com/attachments/597994004088619018/599002677979906081/download_1.png">
 
 Pronto! já estabelecemos a conexão, criamos o usuário e agora é só conectar na database e usar ela.
 Sabe a barrinha onde você clicou no Security?? Então, volte agora para a telinha inicial, no "Cluster" e clique em Connect:
 
-!(MongoDB)[https://cdn.discordapp.com/attachments/597994004088619018/599002676805500928/download_2.png]
+<img height="384" src="https://cdn.discordapp.com/attachments/597994004088619018/599002676805500928/download_2.png">
 
 Irá aparecer 3 alternativas de uso, escolha a do meio. Onde faz a conexão com o aplicativo ("Connect Your Application")
 
-!(MongoDB)[https://cdn.discordapp.com/attachments/597994004088619018/599002674397970452/download_3.png]
+<img height="384" src="https://cdn.discordapp.com/attachments/597994004088619018/599002674397970452/download_3.png">
 
 Após escolher uma das alternativas de como iremos usar a conexão através do mongo, agora só precisamos pegar o link gerado que o mongo nos dá (Não divulgue seu link para ninguém).
 
-!(MongoDB)[https://cdn.discordapp.com/attachments/597994004088619018/599002673429086218/download_4.png]
+<img height="384" src="https://cdn.discordapp.com/attachments/597994004088619018/599002673429086218/download_4.png">
 
 Nisso você criou a Conta, fez o usuário, manteve as conexões abertas e agora pegou o link de conexão. O que falta mais? bom... usarmos isso no código né
 
@@ -41,7 +41,7 @@ Nisso você criou a Conta, fez o usuário, manteve as conexões abertas e agora 
 Bom, lembra do nosso código base do bot usando a npm Discord.js? então, porque não usar ele como exemplo?
 Crie um arquivo chamado "database.js", será onde irá ficar a conexão com a Mongo Atlas e o sistema de troca de documentos!
 
-!(MongoDB)[https://cdn.discordapp.com/attachments/597994004088619018/599002671567077386/download_5.png]
+<img height="384" src="https://cdn.discordapp.com/attachments/597994004088619018/599002671567077386/download_5.png">
 
 Dentro do arquivo "database.js", iremos colocar o código onde fará a ligação com o Mongo Atlas, e a estrutura em schema do nosso documento (pequeno exemplo):
 
