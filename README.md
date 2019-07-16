@@ -36,7 +36,7 @@ Após escolher uma das alternativas de como iremos usar a conexão através do m
 
 Nisso você criou a Conta, fez o usuário, manteve as conexões abertas e agora pegou o link de conexão. O que falta mais? bom... usarmos isso no código né
 
-##Aplicando o Mongoose no código
+## Aplicando o Mongoose no código
 
 Bom, lembra do nosso código base do bot usando a npm Discord.js? então, porque não usar ele como exemplo?
 Crie um arquivo chamado "database.js", será onde irá ficar a conexão com a Mongo Atlas e o sistema de troca de documentos!
