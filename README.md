@@ -1,10 +1,10 @@
-##Como colocar a mongo db em seu botJS
+## Como colocar a mongo db em seu botJS
 Requisitos 
 <https://cloud.mongodb.com/> _Conta no mongo_ 
 <https://www.npmjs.com/package/mongoose> _npm i mongoose_
 <https://discordjs.guide/keyv/#command-handler> _Tutorial de bot Handler_
 
-##Criando Conta
+## Criando Conta
 
 Ao entrar no site do MongoDB Atlas vá em "Sign-in" ou em "Try Free" e crie sua conta com os seus dados (Não precisa de cartão, é totalmente gratuito).
 Logo após você criar a conta, o Cluster irá ser criado automáticamente, que é onde fica a sua Database.
