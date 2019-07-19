@@ -46,23 +46,23 @@ Crie um arquivo chamado "database.js", será onde irá ficar a conexão com a Mo
 Dentro do arquivo "database.js", iremos colocar o código onde fará a ligação com o Mongo Atlas, e a estrutura em schema do nosso documento (pequeno exemplo):
 
 ```js
-var mongoose = require("mongoose") // faz requisicao do mongoose
-var Schema = mongoose.Schema // só para deixar bonitinho
+const mongoose = require("mongoose") // faz requisicao do mongoose
+const Schema = mongoose.Schema // só para deixar bonitinho
 mongoose.connect("Link de sua conexão", { // Onde pegamos o link, da conexão em Cluster
     useNewUrlParser: true
 }).then(function () { // Caso Logue Corretamente
-    console.log('\x1b[32m[ BANCO DE DADOS ] \x1b[0mBanco de dados foi ligado');
+    console.log('\x1b[32m[ BANCO DE DADOS ] \x1b[0mBanco de dados foi ligado')
 }).catch(function () { // Caso de ERRO
-    console.log('\x1b[31m[ BANCO DE DADOS ] \x1b[0mBanco de dados desligado por erro');
-});
+    console.log('\x1b[31m[ BANCO DE DADOS ] \x1b[0mBanco de dados desligado por erro')
+})
 
 // Iremos fazer um pequeno databse do usuário:
-var User = new Schema({
-    _id: { type: String, required: true }, // ID Do Usuário
-    rank: { type: Number, default: 1 }, // Rank do Usuário
-    xp: { type: Number, default: 0 }, // Xp do Usuário
-    money: { type: Number, default: 0 },
-    coins:{type:Number,default: 0}
+const User = new Schema({
+    _id: { String, required: true }, // ID Do Usuário
+    rank: { Number, default: 1 }, // Rank do Usuário
+    xp: { Number, default: 0 }, // Xp do Usuário
+    money: { Number, default: 0 },
+    coins:{ Number, default: 0}
  // Dinheiro do Usuário
 })
 /* Colocamos assim, o nome do que queremos (que nem um Objeto sabe?)
@@ -73,8 +73,8 @@ required: è que é NECESSÀRIO TER
 */
 
 // Aqui é a exportação. para usar essa base do documento, fora desse código (Troca de documentos)
-var Users = mongoose.model("Users", User);
-exports.Users = Users
+
+exports.Users = mongoose.model("Users", User)
 ```
 
 Ok, temos o código onde faz a conexão com o Mongo e uma pequena base de um documento para o usuário, mas agora falta a gente fazer o uso disso!
@@ -86,10 +86,10 @@ Adcione esse `code` dentro da index.js
 const Database = require("./database.js")
 
 // Vamos fazer com que, a cada mensagem enviada pelo usuário, ele irá ganhar DINHEIRO XP e upará de nivel
-grandle.on("message", message => {
-    if (message.author.bot) return; // Retorna caso não seja bot
+<client>.on("message", message => {
+    if (message.author.bot) return // Retorna caso não seja bot
     // Database.Users ( Database é a conta que usamos ) e ( Users é a exportação que deixamos no código do "database.js")
-    Database.Users.findOne({ "_id": message.author.id }, function (erro, documento) { // Procura na database o documento do usuário, pela id dele
+    Database.Users.findOne({ _id: message.author.id }, (erro, documento) => { // Procura na database o documento do usuário, pela id dele
         if (documento) { // Caso Encontre o documento, executará esse código:
             documento.coins += 1 // Dinheiro do usuário, será adicionado +1
             documento.xp += 10 // XP +10
@@ -97,14 +97,14 @@ grandle.on("message", message => {
                 documento.xp = 0 // o Xp vai pro 0
                 documento.level += 1 // e o level sobe +1
             }
-            documento.save(); // No fim de tudo, o documento será salvado
+            documento.save() // No fim de tudo, o documento será salvado
         } else { // Caso o Usuário não tenha ainda um documento salvo na Database
             new Database.Users({
                 _id: message.author.id,
-            }).save();
+            }).save()
         }
     })
-});
+})
 ```
 
 Bom, então é isso. É um pequeno tutorial de como criar, conectar e usar o Mongo Atlas.
